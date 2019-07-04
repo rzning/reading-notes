@@ -66,5 +66,101 @@ title   : "第一章 引言 - 区块链从概念到实战"
 
 ### 为什么选择区块链
 
+区块链是通过比特币而为人所知的，它是一种加密数字货币，概念上是用来解决传统数据库无法满足数字货币需求问题的：
 
+- 区块链账本中的数据不可篡改；
+- 这是一个高度安全的数据库，它使用公钥和密钥进行事务处理；
+- 数据库公开面向所有人，可用于验证和添加事务；
+- 由于区块链权力分散，所以没有停机时间，因此交易可以随时随地添加；
+- 它可以是公共或私人的，并灵活地满足个人商业需求；
+- 随时都可以接受审计。
 
+### 区块链如何工作
+
+接下来将了解如何将数据添加到区块链账本中。
+
+顾名思义，区块链是一种块链式数据结构，每个区块指向前一个区块。
+
+每个区块包括：
+
+- 1) 一个区块头；
+- 2) 区块中的一个或多个事务；
+- 3) 一系列的 Ommers 或是叔区块，叔区块的父区块和当前区块的父区块是相同的。
+
+Ommers 是未被选择用于包含在一致性链区块链中的分散区块。然而，矿工仍然可以通过它们挖掘少量的通证。
+
+### 区块头
+
+区块链是由一系列用特定逻辑而连接起来的区块组成的。每个区块都有一个头部，它具有一下信息：
+
+- 1) 前一区块的哈希值；
+- 2) 时间戳；
+- 3) 挖掘或难度目标；
+- 4) 工作量证明 ( PoW ) 的随机数；
+- 5) 包含该事务的梅克尔根 ( Merkle root ) 的哈希值。
+
+### 梅克尔根
+
+在实际生活中，区块链更为复杂，每个区块可能包含很多项事务。每个事务都有一个与之关联的哈希值。
+因此区块链被指定为哈希值，该哈希值是所有交易的哈希值，即区块的哈希值实际上是哈希值的哈希值，并且被保存在区块头中。
+整个金字塔被称为矿工验证的梅克尔根。
+
+如果改变了任何事务，梅克尔根值就会改变对一组交易完整性的验证。
+
+正如比特币杂志 《Bitcoin Magazine》 和以太坊 ( Ethereum ) 的联合创始人 Vitalik Buterin 所说的那样：
+
+> 梅克尔树是组成区块链的一个基本部分。虽然在理论上，确实存在在缺少梅克尔树的情况下建立区块链的可能性，
+> 但如果仅仅通过创建直接包含每个交易的巨型区块，那样从长远来看会在使用最强计算机时消弱区块链的可信性，
+> 这会给扩展性带来巨大的挑战。
+
+运用这些信息，可以计算当前区块的哈希值，并存储在当前区块和下一个区块中。
+
+接下来用 Java 当然也可以用任何自己喜欢的编程语言来创建一个区块链模型。
+
+## 开始
+
+现在通过一些实际的编程例子来介绍整个区块链的运作模式。
+
+下面将介绍 Java 的三个类定义：
+
+- `Block.java`
+- `BlockChain.java`
+- `BlockChainClient.java`
+
+可以将 `Block.java` 视为区块链中的区块，它具有交易信息和时间戳等常规数据。
+
+`BlockChain.java` 由一个数组或可扩展数组组成，用户可以在其中添加区块。
+默认情况下，当区块链类被实例化时，创世区块已经存在了。
+
+人们可以从 `BlockChainClient` 里进一步向 `BlockChain` 添加更多的区块。
+
+这是一个非常简单的例子。人们在每个区块中只使用了一个事务。
+然而，在实际生活中，区块中可能有许多这样的事务，并且区块哈希值是由该区块所有事务的联合哈希值计算出来的。
+
+```java
+package com.java.blockChain;
+import java.security.MessageDigest;
+import javax.xml.bind.DatatypeConverter;
+
+public class Block {
+    private int index;
+    private String dateTimeStampOfTransaction;
+    private String transactionDetails;
+    private String previousHash;
+    private String hash;
+    private int nonce;
+
+    public Block (int index, String date, String transaction, String previousHash, int nonce) {
+        this.index = index;
+        this.dateTimeStampOfTransaction = date;
+        this.transactionDetails = transaction;
+        this.previousHash = previousHash;
+        this.nonce = nonce;
+        this.hash = calculateHash();
+    }
+
+    public String calculateHash () {
+        // ...
+    }
+}
+```
