@@ -24,7 +24,7 @@ BlockChain: From Concept to Execution
 
 - **第一章** [引言](./chapter01)
 - **第二章** [比特币](./chapter02)
-- **第三章** 以太坊
+- **第三章** [以太坊](./chapter03)
 - **第四章** 超越加密数字货币的企业级区块链
 - **第五章** Quorum
 - **第六章** MultiChain
