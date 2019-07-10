@@ -106,3 +106,73 @@ Solidity 配有自己的编译器，可生成可以在以太坊虚拟机上运�
 
 DAO 的交易记录和程序规则保留在区块链上。
 
+DAO 不是一个集中式和等级制的系统模型，DAO 遵循一种分布式的模型，人们根据代码中指定的协议与区块链进行交互。
+
+以太坊 DAO 众筹是迄今为止最成功的众筹活动之一。
+
+## 以太坊用例
+
+- 加密数字货币和货币兑换；
+- 遗嘱和证书生成；
+- 发行身份证、追踪难民卡；
+- 选举投票系统；
+- 众筹；
+- 土地登记和房地产；
+- 招标和拍卖应用。
+
+## 以太坊入门
+
+### Truffle
+
+![truffle-logo-dark](https://www.trufflesuite.com/img/truffle-logo-dark.svg) | A world class development environment, testing framework and asset pipeline for blockchains using the Ethereum Virtual Machine (EVM), aiming to make life as a developer easier.
+-|-
+
+Truffle 是一个开发智能合约的工具，用最好的 cacaos 制作而成。
+
+- <https://www.trufflesuite.com/>
+- <https://github.com/trufflesuite/truffle>
+
+Truffle 使用以太坊虚拟机 ( EVM ) 的区块链的世界级开发环境，测试框架和资产管道，旨在使开发人员的生活更轻松。
+
+使用步骤：
+
+安装 Truffle 包，需求 Node.js v8.9.4 或更高版本。
+
+```bash
+npm install -g truffle
+```
+
+安装 testRPC 目前此包已经更名为 ganache-cli
+
+```bash
+npm install -g ganache-cli
+```
+
+- <https://www.trufflesuite.com/ganache>
+- <https://github.com/trufflesuite/ganache>
+- <https://github.com/trufflesuite/ganache-cli>
+
+Canache CLI 是以太坊开发工具 Truffle 套件的一部分，是 [Ganache] 的命令行版本，
+以使用以太坊开发开发你的个人区块链。
+
+[Ganache]: <https://github.com/trufflesuite/ganache>
+
+Ganache CLI 是一个 Node.js 命令行工具，用于测试和开发的以太坊客户端。
+
+Ganache GLI 使用 [EthereumJS] 来模拟完整的客户端并使开发以太坊应用程序的速度变得更快。
+
+[EthereumJS]: <https://ethereumjs.github.io/>
+
+## MetaMask
+
+![ethereum-metamask-chrome](https://metamask.io/img/ethereum-metamask-chrome.png)
+
+[MetaMask] 是一款 Chrome 浏览器插件，它允许在浏览器中运行以太坊 DApps 而无需运行以太坊的全部节点。
+
+- <https://metamask.io/>
+- <https://github.com/MetaMask/metamask-extension>
+
+[MetaMask]: <https://metamask.io/>
+
+你可以在 Chrome, Firefox, Opera 和新的 [Brave](https://brave.com/) 浏览器中安装 [MetaMask] 插件。
+
