@@ -124,8 +124,8 @@ DAO 不是一个集中式和等级制的系统模型，DAO 遵循一种分布式
 
 ### Truffle
 
-![truffle-logo-dark](https://www.trufflesuite.com/img/truffle-logo-dark.svg) | A world class development environment, testing framework and asset pipeline for blockchains using the Ethereum Virtual Machine (EVM), aiming to make life as a developer easier.
--|-
+| ![truffle-logo-dark](https://www.trufflesuite.com/img/truffle-logomark.svg) Truffle | A world class development environment, testing framework and asset pipeline for blockchains using the Ethereum Virtual Machine (EVM), aiming to make life as a developer easier. |
+|-|-|
 
 Truffle 是一个开发智能合约的工具，用最好的 cacaos 制作而成。
 
@@ -163,7 +163,7 @@ Ganache GLI 使用 [EthereumJS] 来模拟完整的客户端并使开发以太坊
 
 [EthereumJS]: <https://ethereumjs.github.io/>
 
-## MetaMask
+### MetaMask
 
 ![ethereum-metamask-chrome](https://metamask.io/img/ethereum-metamask-chrome.png)
 
@@ -176,3 +176,33 @@ Ganache GLI 使用 [EthereumJS] 来模拟完整的客户端并使开发以太坊
 
 你可以在 Chrome, Firefox, Opera 和新的 [Brave](https://brave.com/) 浏览器中安装 [MetaMask] 插件。
 
+
+## 使用以太坊构建企业级区块链应用
+
+以太坊并不是为了解决诸如隐私、可扩展性、性能、点对点网络等企业框架问题而设计的。
+
+若希望继续使用以太坊，并且想拥有企业级的功能，就必须和 Parity 一起使用。
+
+## Parity
+
+- <https://www.parity.io/>
+- <https://github.com/paritytech/>
+
+![logo-parity-ethereum](https://github.com/paritytech/parity-ethereum/raw/master/docs/logo-parity-ethereum.svg?sanitize=true)
+
+[parity ethereum]: <https://github.com/paritytech/parity-ethereum>
+
+[parity ethereum] 快速、轻便、强大的 EVM 和 WASM 客户端。
+
+- <https://github.com/paritytech/parity-ethereum>
+
+[parity ethereum] 专为关键任务使用而设计，提供了快速可靠服务所必须的核心基础设施。
+
+- 高性能、高可靠性、低内存占用、易于使用和生产稳定；
+- 挖矿通过权威证明 ( PoA ) 而不是工作量证明 ( PoW ) ，如只有指定的用户才能验证事务处理；
+- 支持名称注册系统；
+- Web3 Dapp 浏览器；
+- 密钥创建和管理；
+- 地址和多重签名管理。
+
+许多区块链框架此后不断推出，所有这些企业功能都可能是内置的。
