@@ -124,8 +124,9 @@ DAO 不是一个集中式和等级制的系统模型，DAO 遵循一种分布式
 
 ### Truffle
 
-| ![truffle-logo-dark](https://www.trufflesuite.com/img/truffle-logomark.svg) Truffle | A world class development environment, testing framework and asset pipeline for blockchains using the Ethereum Virtual Machine (EVM), aiming to make life as a developer easier. |
-|-|-|
+![truffle-logo-dark](https://avatars2.githubusercontent.com/u/22205159?s=160)
+
+> A world class development environment, testing framework and asset pipeline for blockchains using the Ethereum Virtual Machine (EVM), aiming to make life as a developer easier. 
 
 Truffle 是一个开发智能合约的工具，用最好的 cacaos 制作而成。
 
