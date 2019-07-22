@@ -1,0 +1,17 @@
+{
+  "name": "@rzning/reading-notes",
+  "version": "1.0.0",
+  "description": "reading notes",
+  "repository": "https://github.com/rzning/reading-notes.git",
+  "author": "Zhenning Ruan <rzning@outlook.com>",
+  "license": "MIT",
+  "private": true,
+  "homepage": "http://rzning.com/reading-notes/",
+  "scripts": {
+    "dev": "vuepress dev books",
+    "build": "vuepress build books"
+  },
+  "devDependencies": {
+    "vuepress": "^1.0.2"
+  }
+}
