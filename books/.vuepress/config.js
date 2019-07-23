@@ -1,7 +1,7 @@
 module.exports = {
     title: '读书笔记 - rzning.com',
     description: '阮振宁的日常读书笔记',
-    base: '/reading-notes/',
+    base: '/',
     port: '8090',
     dest: 'dist',
     themeConfig: {

@@ -1,0 +1,5 @@
+# 重定向
+[[redirects]]
+from = "http://reading-notes.netlify.com/*"
+to = "http://reading-notes.rzning.com/:splat"
+status = 301
