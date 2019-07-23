@@ -15,6 +15,8 @@ sidebarDepth: 0
 区块链从概念到实战
 ===============
 
+<BookInfo/>
+
 ::: tip
 BlockChain: From Concept to Execution
 :::
@@ -25,11 +27,11 @@ BlockChain: From Concept to Execution
 
 ### 目录
 
-- **第一章** [引言](./chapter01)
-- **第二章** [比特币](./chapter02)
-- **第三章** [以太坊](./chapter03)
-- **第四章** [超越加密数字货币的企业级区块链](./chapter04)
-- **第五章** [Quorum](./chapter05)
+- **第一章** [引言](./chapter01.md)
+- **第二章** [比特币](./chapter02.md)
+- **第三章** [以太坊](./chapter03.md)
+- **第四章** [超越加密数字货币的企业级区块链](./chapter04.md)
+- **第五章** [Quorum](./chapter05.md)
 - **第六章** MultiChain
 - **第七章** R3 Corda
 - **第八章** 瑞波币

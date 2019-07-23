@@ -12,6 +12,8 @@
     "build": "vuepress build books"
   },
   "devDependencies": {
+    "pug": "^2.0.4",
+    "pug-plain-loader": "^1.0.0",
     "vuepress": "^1.0.2"
   }
 }
