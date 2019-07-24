@@ -18,7 +18,8 @@ module.exports = {
                     title: 'Contents',
                     collapsable: false,
                     children: [
-                        ['chapter01', '第一章 区块链概论']
+                        ['chapter01', '第一章 区块链概论'],
+                        ['chapter02', '第二章 以太坊工作原理与基础']
                     ]
                 }
             ],
