@@ -41,11 +41,11 @@ export default {
 <style lang="stylus" scoped>
 .book-info
   margin 2rem 0
-  padding 1rem .7rem
   border .25rem solid $accentColor
   border-radius .5rem
   overflow auto
   .container
+    padding 1rem .7rem
     min-width 20rem
   .item
     display flex

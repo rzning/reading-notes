@@ -97,14 +97,128 @@ Gas | 燃料 | 以太坊提供了可执行图灵完备计算的智能合约，�
 
 目前以太坊支持的客户端主要有：
 
-- [go-ethereum](https://geth.ethereum.org/) ( geth )
-- [parity](https://github.com/paritytech/parity-ethereum)
-- [trinity](https://trinity.ethereum.org/)
-- [aleth](https://github.com/ethereum/aleth)
-
-Client | GitHub Repo | Language
--|-|-
-[geth] | [go-ethereum] | Go
+Client      | GitHub Repo               | Language
+------------|---------------------------|---------
+[geth]      | [go-ethereum]             | [Go]
+[parity]    | [parity-ethereum]         | [Rust]
+[trinity]   | [trinity][trinity-repo]   | [Python]
+[aleth]     | [aleth]                   | [C++]
 
 [geth]: <https://geth.ethereum.org/>
 [go-ethereum]: <https://github.com/ethereum/go-ethereum>
+[Go]: <https://github.com/golang/go>
+
+[parity]: <https://www.parity.io/>
+[parity-ethereum]: <https://github.com/paritytech/parity-ethereum>
+[Rust]: <https://github.com/rust-lang/rust>
+
+[trinity]: <https://trinity.ethereum.org/>
+[trinity-repo]: <https://github.com/ethereum/trinity>
+[Python]: <https://www.python.org/>
+
+[aleth]: <https://github.com/ethereum/aleth>
+[C++]: <https://isocpp.org/>
+
+> [Ethereum Clients - EthDocs](http://www.ethdocs.org/en/latest/ethereum-clients/index.html)
+
+### 2.2.2 以太坊虚拟机
+
+以太坊其实是一个可编程的区块链，也就是通过在客户端嵌入支持智能合约代码解析执行的以太坊虚拟机来实现的。
+
+不同于直接向用户提供一套已预先定义好的操作功能（如加密数字货币的转账交易），
+以太坊允许用户根据自身的需求和意愿自行创建各种复杂度的操作功能。
+
+基于以太坊平台，用户可以灵活创建各类基于公共账本的去中心化应用。
+
+以太坊数据库的维护和更新由连入网络的很多节点共同完成。
+网络中的每个节点都运行 EVM 并执行相同的命令。
+其目的是为了在整个区块链上达成共识。
+
+以太坊适合节点间自动直接支付应用，或者保证跨网络的群体行动能协调一致等应用场景。
+
+### 2.2.3 以太坊网络
+
+以太坊网络是由很多运行以太坊客户端的节点构成的 P2P 网络。
+
+以太坊节点将维护和保证区块链数据安全，维护网络的稳定，
+执行以太坊分布式共识机制，向以太坊用户提供可持续服务。
+
+绝大部分以太坊项目直接采用以太坊公有链网络，
+因为公有链聚集了大量的用户、网络节点和虚拟币。
+
+也有一些场景需要搭建以太坊私有链网络和以太坊联盟链网络。
+联盟链网络是指在一群相互可信的联盟伙伴之间建立的网络。
+
+类型 | 说明
+------|-
+公有链 | 公有链是一种世界上任何人都可以查看、发送交易并记录符合规则的交易，均可以参与共识过程的一种区块链。
+联盟链 | 联盟链是一种由预先选定节点决定共识过程的区块链。
+私有链 | 私有链的块链写入权由中心化节点或一个组织所控制，块链查询权是公共的或受到不同程度的限制。
+
+
+## 2.3 账户与智能合约
+
+账户（地址）在以太坊网络中扮演着非常核心的作用，其基础是非对称加解密机制形成的一对公私钥：
+
+- 公钥用来生成用户的账户（地址）；
+- 私钥用来对用户发出的数据进行签名并接收发送给账户的数据。
+
+智能合约是存储在账户存储空间中的可由 EVM 解析执行的一段代码。
+
+### 2.3.1 以太坊账户
+
+以太坊网络中存在两类账户：用户账户和合约账户。通常所说的账户是指用户账户。
+
+用户账户由用户自主创建，并通过持有的私钥而掌握账户的所有权。
+
+以太坊把用户账户和合约账户均成为账户是因为二者均为状态对象。
+
+- 用户账户记录用户账户余额；
+- 合约账户记录账户余额、合约代码和数据内容。
+
+所有账户的状态就是以太坊网络的状态，这些状态由全网已达成共识的新区块来保持不断更新。
+
+账户代表外部代理（如自然人、挖矿节点、自动代理）的身份，账户使用私钥加密去鉴证每个交易，
+这样 EVM 就能安全的通过公钥识别每个交易发送者的身份（账户或地址）。
+
+### 2.3.2 密钥文件
+
+每个账户有一对密钥：私钥和公钥。
+
+账户由账户地址索引，地址取自其公钥最后 20 字节。
+
+密钥对均被编码和存放在一个密钥文件中，密钥文件采用 JSON 文本文件格式，可通过文本编辑器打开和浏览。
+
+私钥通过在创建账户时输入的密码来加密保护。
+
+密钥文件 keyfiles 可在以太坊节点数据目录中的 keystore 子目录中找到。
+
+一个新建立的以太坊账户是没有任何加密数字货币的，需要用户通过挖矿获得。
+
+在以太坊节点之间传输整个目录及个人密钥文件均不影响账户安全。
+
+用户要确保经常备份 keyfiles 以保证账户安全，丢失密钥文件或丢失密码，任何人都无法帮助用户找回。
+
+### 智能合约
+
+智能合约是存储在以太坊网络特定地址的一组代码和数据集。
+
+合约账户能够相互发送消息并具有图灵完备计算能力。
+
+合约代码在区块链上使用特定的二进制格式存储，由 EVM 解析执行。
+
+智能合约一般采用高级语言编写，然后编译成字节码加载到区块链上。
+
+编写以太坊智能合约的高级语言主要有以下几种：
+
+语言 | 描述
+-|-
+[Solidity]  | 一种用于开发智能合约并编译成 EVM 字节码的类 JavaScript 语言。
+[Vyper]     | 一种用于开发智能合约并编译成 EVM 字节码的类 Python 语言。
+[Serpent]   | 一种可以编译为 EVM 字节码的汇编语言，可通过各种高级特性进行扩展。
+LLL         | LLL ( Lisp Like Language 类 Lisp 语言 ) 是一种与汇编语言类似的低级语言。
+
+[Solidity]: <https://github.com/ethereum/solidity>
+[Vyper]: <https://github.com/ethereum/vyper>
+[Serpent]: <https://github.com/ethereum/serpent>
+
