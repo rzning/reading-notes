@@ -84,3 +84,51 @@ $ geth account list
 
 ### 3.1.3 发送以太币
 
+转账交易是以太坊最基本和最常用的操作之一，用户可以使用 Geth 控制台通过 `eth.sendTransaction` 函数来转账。
+
+```js
+> var sender = eth.accounts[0]
+> var receiver = eth.accounts[1]
+> var amount = Web3.toWei(0.01, 'ether')
+> eth.sendTransaction({ form: sender, to: receiver, value: amount })
+```
+
+### 3.1.4 客户端应用开发接口
+
+以太坊客户端提供一系列基于 JSON-RPC 的方法可供应用程序调用。
+
+基于 JSON-RPC 与客户端直接交互，需要处理以下逻辑：
+
+- JSON-RPC 协议实现；
+- 二进制格式的编解码，以及与智能合约的交互；
+- 256bit 的数字类型；
+- 管理命令，如创建/管理地址，标识交易。
+
+这给应用开发人员带来了不小的负担。
+
+现在可以使用一系列的程序库或工具来处理这些逻辑，使应用开发人员专注于应用，
+而不必把精力花在如何处理与 EVM 之间的交互上。
+
+软件库 | 语言
+-|-
+[Web3.js] | JavaScript
+[Web3j]   | Java
+[Nethereum] | .NET
+[Ethereum.rb] | Ruby
+
+[Web3.js]: <https://github.com/ethereum/web3.js>
+[Web3j]: <https://github.com/web3j/web3j>
+[Nethereum]: <https://github.com/Nethereum/Nethereum>
+[Ethereum.rb]: <https://github.com/EthWorks/ethereum.rb>
+
+## 3.2 以太坊网络配置
+
+以太坊网络是由安装的各个客户端基于 P2P 协议构建的自组织网络。
+
+用户只需要与安装在本地的客户端交互即可，而与全网用户交互是由客户端之间基于以太坊网络协议自主实现的。
+
+用户可以通过对以太坊客户端的不同操作与配置，从而进入到不同的以太坊网络，
+或者根据不同的区块链应用需求构建新的以太坊网络。
+
+### 3.2.1 以太坊网络基本操作
+
