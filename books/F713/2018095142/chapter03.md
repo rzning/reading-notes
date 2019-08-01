@@ -195,3 +195,59 @@ $ geth import
 $ geth export
 
 ```
+
+#### 7. 静态节点、信任节点和启动节点
+
+若希望每次启动客户端时去连接固定的 peer 节点，可以将其设为静态节点。
+
+静态节点数据可存入 `<datadir>/static-nodes.json` 文件。
+
+可以使用下列函数添加静态节点：
+
+```js
+> admin.addPeer('enode://...@<IP>:<PORT>')
+```
+
+#### 8. 连接失败原因
+
+不能连接到以太坊网络的常见原因有：
+
+- 本地时间可能不同步。将 Internet 同步时钟设为 time.nist.gov
+- 有些防火墙配置为禁止 UDP 传包。可以使用静态节点功能。
+- 在其他 Geth 时使用了禁止节点发现协议，即使用了 `-nodiscover` 参数。这种情况主要用于节点测试或基于固定节点的测试网络。
+
+### 3.2.2 使用以太坊测试网络
+
+以太坊测试网络 Testnet 是供以太坊研究开发人员测试使用的公有链，现阶段提供包括 Ropsten, Kovan, Rinkeby 等。
+使用相应测试网络，要注意该网络对客户端的要求。
+
+一般在向主网络 Mainnet 正式部署智能合约前，建议在以太坊测试网络或用户自建的私有网络上试运行无误后，再正式部署到以太坊主网络运行。
+
+[Parity] 客户端除了可以接入 Ropsten 外，还可以接入 Kovan 测试网络。
+
+Kovan 测试网络采用 POS 共识机制，目前仅 Parity 客户端支持该共识机制。
+
+用户可以使用下列命令进入以太坊测试网络：
+
+```sh
+# Geth 连接到 Ropsten network
+$ geth --testnet console
+
+# Geth 连接到 Rinkeby network
+$ geth --rinkeby console
+
+# Parity 连接到 Ropsten testnet
+$ parity --chain=ropsten
+
+# Parity 连接到 Kovan testnet
+$ parity --chain=kovan
+```
+
+> Geth 命令行选项参考 : [Commandline options | Go Ethereum](https://geth.ethereum.org/interface/Command-Line-Options)
+
+> Parity 联网参考 : [Basic Usage · Parity Tech Documentation](https://wiki.parity.io/Basic-Usage#networking)
+
+使用以太坊测试网络需要有以太币，有两种方式可以获得 Testnet 的以太币：
+
+- 使用计算机的 CPU/GPU 参与测试网络挖矿；
+- 使用各测试网络的以太币水龙头 ( Ethereum wei faucet ) 。
