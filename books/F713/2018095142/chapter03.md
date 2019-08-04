@@ -298,7 +298,7 @@ $ parity --chain=kovan
 
     启用 HTTP-RPC 服务
 
-    `--rpcapi db|eth|net|web3`
+    `--rpcapi db,eth,net,web3`
 
     指定访问 HTTP-RPC 接口的 API 类型。此参数决定了那种类型的 API 可基于 HTTP-RPC 进行接入。
     Geth 默认使用 Web3 API 。
@@ -307,3 +307,116 @@ $ parity --chain=kovan
 
     指定 HTTP-RPC 服务器监听端口，默认为 8545 。
 
+    `--rpccorsdomain http://chriseth.github.io/browser-solidity/`
+
+    用逗号分隔的域列表，从中接受跨源请求（浏览器强制）。这个参数设置那些 URLs 能够接入用户客户端节点，以执行 HTTP-RPC 客户端任务。
+
+    `--datadir /home/TestChain_1`
+
+    指定数据库 ( databases ) 和密钥存储库 ( keystore ) 的数据目录。设置一个本地目录将用户的私有数据与以太坊公有链目录分开。
+
+    `--port 30303`
+
+    指定网络监听端口，默认为 30303 。
+
+    `--identity TestnetMainNodeA`
+
+    自定义节点名称。以便在一系列 peer 节点列表中准确识别用户的节点。
+
+3. 启动 Geth
+
+    启动时可加入上面提到的一些有用参数选项。
+
+    ```sh
+    $ geth [options] --networkid 1999 init /path/to/CustomGenesis.json
+    ```
+
+    若要接入私有网络，用户需要每次启动 Geth 时均带上用户的私有链相关参数，特别是 datadir 参数。
+
+4. 连接 Geth 节点
+
+    若已经运行了一个 Geth 节点，可以通过下面命令启动一个交互式 javaScript 环境，来连接正在运行的节点。
+
+    ```sh
+    $ geth attach
+    ```
+
+5. 设置新账户
+
+    在创建好私有 Testnet 后，可在此测试网络上初始化一个新的账户，
+    并将其设置为用户的 etherbase ( 接收挖矿奖励的地址 ) 。
+
+    ```js
+    > personal.newAccount('password')
+    ```
+
+6. 设置 etherbase
+
+    ```js
+    > miner.setEtherbase(personal.listAccounts[0])
+    ```
+
+    执行成功后，客户端将返回 `true` 。
+
+7. 开始测试
+
+    在完成上面操作后，就可以开始测试以太币挖矿了：
+
+    ```js
+    > miner.start()
+    ```
+
+8. 提前在账户中分配以太币
+
+    将区块封装难度系数设置为 `0x400` 可允许客户端快速地进行挖矿。
+
+    可以通以下操作，给所创建的账户中预先分配一定数量的以太币：
+
+    1) 在创建好的私有链中添加新的以太坊账户。
+    2) 复制所创建的账户地址。
+    3) 将下列参数加入到用户的 `genesis.json` 文件中。
+
+    ```json
+    "alloc": {
+        "<your account address>": {
+            "balance": "20000000000000000000"
+        }
+    }
+    ```
+
+    4) 保存起源文件，回到私有链命令行。一旦 Geth 完全加载，将其关闭。
+    5) 给变量 `primary` 分配一个地址，然后查看其账户余额。
+
+9. 列出当前所有账户地址
+
+    使用命令行指令：
+
+    ```sh
+    $ geth account list
+    ```
+
+    使用 JavaScript 交互环境：
+
+    ```js
+    > eth.accounts
+    ```
+
+10. 获取账户地址
+
+    使用下面语句获取所预分配以太币的账户地址：
+
+    ```js
+    > primary = eth.accounts[n]
+    ```
+
+    > `n` 为指定账户的索引。
+
+11. 将用户用于公有网络
+
+    若要将创建于私有测试网络的账户用在共有网络，可以使用以下命令：
+
+    ```js
+    > balance = Web3.fromWei(eth.getBalance(primary), 'ether')
+    ```
+
+    > 此命令将返回该账户的以太币数量（以 wei 为单位）。
