@@ -420,3 +420,65 @@ $ parity --chain=kovan
     ```
 
     > 此命令将返回该账户的以太币数量（以 wei 为单位）。
+
+## 3.3 以太坊应用开发环境搭建
+
+[Truffle suite] 是以太坊中非常受欢迎的一个集开发、测试和部署的开发套件，可以简化开发工作。
+
+<img alt="truffle-logo" src="https://www.trufflesuite.com/img/truffle-logo-dark.svg" width="160"/>
+
+### 3.3.1 安装 Truffle 框架
+
+[Truffle] 框架以 npm 包方式发布。
+
+```sh
+$ npm install -g truffle
+# or
+$ yarn global add truffle
+```
+
+[Ganache] 是一个用于以太坊开发的个人区块链客户端，可用于部署合同、开发应用程序及运行测试。
+
+Ganache 既可用作桌面应用程序，也可用作命令行工具（之前称为 TestRPC ）。
+
+Ganache 客户端可到 [Ganache 网站] 上点击 `Download` 按钮进行下载。
+
+
+[Truffle suite]: <https://www.trufflesuite.com/>
+[Truffle]: <https://github.com/trufflesuite/truffle>
+[Ganache]: <https://github.com/trufflesuite/ganache>
+[Ganache 网站]: <https://www.trufflesuite.com/ganache>
+
+### 3.3.2 使用 VS Code
+
+在 VS Code 中搜索并安装 [solidity][vscode-solidity] 插件。
+
+[vscode-solidity]: <https://github.com/juanfranblanco/vscode-solidity>
+
+### 3.3.3 其他以太坊开发包
+
+[Truffle] 是基于 [node.js] + [Web3.js] 的框架，
+本质上还是在使用 [Web3.js] 进行合约的编译、发布和调试。
+
+[node.js]: <https://nodejs.org/zh-cn/>
+
+<img alt="web3js-logo" src="https://raw.githubusercontent.com/ethereum/web3.js/2.x/assets/web3js.svg?sanitize=true" width="400"/>
+
+如用户熟悉 node.js 开发，完全可以抛开 Truffle 而直接使用 [Web3.js] 进行开发。
+
+```sh
+$ yarn add web3
+```
+
+若用户擅长 Java 语言，可以使用 web3j 。
+
+![web3j](https://docs.web3j.io/_static/web3j.png)
+
+[web3j] 是一个轻量级 Java 和 Android 库，可用于与 Ethereum 客户端集成。
+
+![web3j_network](https://docs.web3j.io/_images/web3j_network.png)
+
+使用 [web3j] 应用库，可以不再依赖 node.js 和 Web3.js 而直接使用 Java 代码，
+利用 [JSON RPC] 协议直接访问以太坊网络。
+
+[JSON RPC]: <https://github.com/ethereum/wiki/wiki/JSON-RPC>
