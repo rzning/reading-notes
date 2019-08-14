@@ -64,7 +64,11 @@ Parity 命令行选项： [Configuring Parity Ethereum · Parity Tech Documentat
 
 以太坊 JavaScript Console 可使用 Web3 JavaScript Papp API 和 admin API 全部功能。
 
-### 4.2.1 交互式应用： JERE REPL 控制台
+::: tip
+JavaScript Console 文档参考： [JavaScript console | Go Ethereum](https://geth.ethereum.org/interface/JavaScript-Console)
+:::
+
+### 4.2.1 交互式应用 : JERE REPL 控制台
 
 以太坊命令执行应用程序 Geth 包含 JavaScript 控制台，可通过 `geth console` 或 `geth attach` 命令启动。
 
@@ -78,3 +82,35 @@ $ geth console
 # 启动交互式 JavaScript 环境（并连接节点）
 $ geth atach
 ```
+
+### 4.2.2 非交互状态下使用 : JSRE 脚本模式
+
+用户可以直接执行 JavaScript 文件，此 `console` 和 `attach` 子命令接受 `---exec` 参数，用于执行一个 JavaScript 语句。
+
+```sh
+$ geth --exec "eth.blockNumber" attach
+```
+
+上列命令将打印正在运行的 Geth 实例的当前区块号。
+
+::: warning 警告 ( Caveat )
+Geth JSRE 使用 [Otto JS VM] 有以下限制：
+- `use strict` 将被解析，但不产生任何作用。
+- 正则表达式引擎 ( re2/regexp ) 与 ECMA5 规范不完全兼容。
+:::
+
+[Otto JS VM]: <https://github.com/robertkrimen/otto>
+
+### 4.2.3 管理 APIs
+
+除官方的 [Dapp API] 接口， Geth 节点还支持附加的管理 API's 。
+这些 API's 使用 [JSON-RPC] 接口，并遵循 Dapp API 相同约定 ( conventions ) 。
+
+Geth 控制台客户端支持所有这些附加的管理 API's 。
+
+[Dapp API]: <https://github.com/ethereum/wiki/JSON-RPC>
+[JSON-RPC]: <http://www.jsonrpc.org/specification>
+
+::: tip
+管理 APIs 参考： [Management APIs | Go Ethereum](https://geth.ethereum.org/interface/Management-APIs)
+:::
