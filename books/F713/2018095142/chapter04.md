@@ -114,3 +114,35 @@ Geth 控制台客户端支持所有这些附加的管理 API's 。
 ::: tip
 管理 APIs 参考： [Management APIs | Go Ethereum](https://geth.ethereum.org/interface/Management-APIs)
 :::
+
+## 4.3 Web3 JavaScript 应用程序 API 接口
+
+应用程序需要基于以太坊工作，可以使用由 [Web3.js] 类库提供的 Web3 对象。
+
+基于该引擎，应用程序可以通过 RPC 调用与本地节点进行通信，
+[Web3.js] 可以与任何开放 RPC 层的以太坊节点协同工作。
+
+[Web3.js]: <https://github.com/ethereum/web3.js>
+
+Web3 包含 `eth` 对象和 `shh` 对象。
+
+- `Web3.eth` 专用于以太坊网络接口
+- `Web3.shh` 用于 whisper 交互
+
+### 加载 Web3
+
+使用以下方法，可以将 Web3.js 加载到用户项目中：
+
+```sh
+# npm
+$ npm install Web3
+
+# bower
+$ bower install Web3
+
+# meteor
+$ meteor add ethereum:Web3
+
+# vanilla
+$ link the dist ./Web3.min.js
+```
