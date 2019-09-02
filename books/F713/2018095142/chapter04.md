@@ -146,3 +146,75 @@ $ meteor add ethereum:Web3
 # vanilla
 $ link the dist ./Web3.min.js
 ```
+
+然后可以创建 Web3 实例，并设置接口服务 URL 。
+
+```js
+import Web3 from 'web3';
+
+const web3 = new Web3('ws://localhost:8546');
+
+console.log(web3);
+```
+
+可以使用 `web3.setProvider()` 设置提供程序，如 WebsocketProvider 。
+
+```js
+web3.setProvider('ws://localhost:8546');
+// or
+web3.setProvider(new Web3.providers.WebsocketProvider('ws://localhost:8546'));
+```
+
+设置好后方可使用 web3 的 API 了。
+
+```js
+web3.eth.getAccounts().then(console.log)
+```
+
+### 4.3.2 使用回调
+
+由于 Web3 API 被设计用于与本地 RPC 节点协同工作，其所有功能均默认使用 HTTP 同步请求。
+
+若想使用异步请求，可以在绝大部分函数之后加入可选的回调函数作为最后参数。
+
+所以回调函数均使用错误码回调形式：
+
+```js
+web3.eth.getBlock(42, function (error, result) {
+    if (error) {
+        console.log(error);
+    } else {
+        console.log(result);
+    }
+})
+```
+
+### 4.3.3 批处理请求
+
+批处理请求允许成批加载请求并同时处理所加载请求。
+
+### 4.3.4 Web3.js 中的超大数字
+
+在以太坊只能合约的开发中，用户经常会获得一个超大数字对象，
+由于 JavaScript 不能正确处理超大数字，需要依赖特别的函数进行数字处理。
+
+Web3.js 依赖 BigNumber 库，并自动加载。
+
+```js
+var balance = new BigNumber('<a big number string>');
+// or
+var balance = Web3.eth.getBalance(someAddress);
+```
+
+## 4.4 JSON RPC API
+
+JSON-RPC 是无状态、轻量化远程程序接口 ( RPC ) 协议。
+
+此协议主要定义了几类数据结构及相关的数据处理规则。
+
+作为透明传输协议，此概念也可用于基于 sockets, HTTP 或者其他很多不同的消息传输环境中。
+
+JSON-RPC 使用 JSON ( RFC4627 ) 作为数据格式，
+基于 JSON-RPC 可以在 Java, C++ 等应用程序中直接调用以太坊客户端的相关方法。
+
+### 4.4.1 默认 JSON-RPC 客户端
