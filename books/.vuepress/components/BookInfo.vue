@@ -17,6 +17,7 @@ export default {
         { name: 'name', label: '书名' },
         { name: 'original', label: '原书名' },
         { name: 'author', label: '作者' },
+        { name: 'compiler', label: '编者' },
         { name: 'translator', label: '译者' },
         { name: 'publisher', label: '出版社' },
         { name: 'category', label: '分类' }
