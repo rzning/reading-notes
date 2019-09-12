@@ -50,7 +50,8 @@ module.exports = {
           title: 'Wastelands',
           collapsable: false,
           children: [
-            ['preface', '序']
+            ['preface', '序'],
+            ['fiction01', '一切混乱的终结']
           ]
         }
       ],
