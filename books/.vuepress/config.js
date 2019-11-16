@@ -51,7 +51,8 @@ module.exports = {
           collapsable: false,
           children: [
             ['preface', '序'],
-            ['fiction01', '一切混乱的终结']
+            ['fiction01', '一切混乱的终结'],
+            ['fiction02', '回收']
           ]
         }
       ],
