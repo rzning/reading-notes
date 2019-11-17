@@ -52,7 +52,8 @@ module.exports = {
           children: [
             ['preface', '序'],
             ['fiction01', '一切混乱的终结'],
-            ['fiction02', '回收']
+            ['fiction02', '回收'],
+            ['fiction03', '面包与炸弹']
           ]
         }
       ],
