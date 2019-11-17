@@ -53,7 +53,8 @@ module.exports = {
             ['preface', '序'],
             ['fiction01', '一切混乱的终结'],
             ['fiction02', '回收'],
-            ['fiction03', '面包与炸弹']
+            ['fiction03', '面包与炸弹'],
+            ['fiction04', '进镇出镇记']
           ]
         }
       ],
