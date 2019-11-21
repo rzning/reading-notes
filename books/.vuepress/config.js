@@ -57,7 +57,8 @@ module.exports = {
             ['fiction04', '进镇出镇记'],
             ['fiction05', '沙渣之族'],
             ['fiction06', '隧道暗且长'],
-            ['fiction07', '等待微风号']
+            ['fiction07', '等待微风号'],
+            ['fiction08', '永不绝望']
           ]
         }
       ],
