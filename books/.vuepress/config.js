@@ -58,7 +58,8 @@ module.exports = {
             ['fiction05', '沙渣之族'],
             ['fiction06', '隧道暗且长'],
             ['fiction07', '等待微风号'],
-            ['fiction08', '永不绝望']
+            ['fiction08', '永不绝望'],
+            ['fiction09', '系统管理员照看世界']
           ]
         }
       ],
