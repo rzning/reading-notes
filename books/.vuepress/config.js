@@ -60,7 +60,8 @@ module.exports = {
             ['fiction07', '等待微风号'],
             ['fiction08', '永不绝望'],
             ['fiction09', '系统管理员照看世界'],
-            ['fiction10', '最后的原生生物']
+            ['fiction10', '最后的原生生物'],
+            ['fiction11', '末日一瞥']
           ]
         }
       ],
