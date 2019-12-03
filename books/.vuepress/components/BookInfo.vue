@@ -30,7 +30,10 @@ export default {
     },
     tags () {
       const tags = this.info.tags
-      if (tags) {
+      if (Array.isArray(tags)) {
+        return tags
+      }
+      if (typeof tags === 'string') {
         return tags.split(' ')
       }
       return []
