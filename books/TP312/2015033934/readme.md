@@ -1,6 +1,6 @@
 ---
-title       : "你不知道的JavaScript. 上卷"
-name        : "你不知道的JavaScript. 上卷"
+title       : "你不知道的 JavaScript 上卷"
+name        : "你不知道的 JavaScript 上卷"
 author      : "(美) 辛普森 (Simpson,K.)"
 translator  : 赵望野 梁杰
 publisher   : 人民邮电出版社
@@ -29,11 +29,11 @@ tags        :
 
 ### 目录
 
-::: tip 卷一
+::: tip 第一部分
 作用域和闭包 Scope & Closures
 :::
 
-- **一、** 作用域是什么
+- **一、** [作用域是什么](./part_a/chapter01.md)
 - **二、** 词法作用域
 - **三、** 函数作用域和块作用域
 - **四、** 提升
