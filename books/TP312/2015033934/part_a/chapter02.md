@@ -93,3 +93,42 @@ foo('var a = 2')
 [Function - JavaScript | MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
 :::
 
+### with
+
+```js
+function foo (obj) {
+    with (obj) {
+        a = 3;
+    }
+}
+
+var obj = { a: 1 };
+var obj2 = { b: 2 };
+
+foo(obj);
+console.log(obj.a); // => 3
+
+foo(obj2);
+console.log(obj2.a); // => undefined
+console.log(a); // => 3 -- 变量 a 泄漏到了全局作用域
+```
+
+上例中，调用 `foo(obj2);` 方法在 `obj2` 对象中没有找到属性 `a`
+则会在 `foo()` 作用域中执行 `a = 3;` 语句，最终在全局作用域创建变量 `a` 并赋值。
+
+### 2.2.3 性能
+
+`eval()` 和 `with` 会在运行时修改或创建新的作用域，以此来欺骗其他在书写时定义的词法作用域。
+
+JavaScript 引擎会在编译阶段进行数项性能优化，其中一些优化依赖于能够根据代码的词法进行静态分析。
+而代码中存在 `eval()` 或 `with` 时，无法在词法分析阶段进行任何优化。
+
+## 2.3 小结
+
+词法作用域意味着作用域是由书写代码时函数声明的位置所决定的。
+
+编译的词法分析阶段基本能够知道全部标识符在哪里以及是如何声明的，
+从而能够预测在执行过程中如何对它们进行查找。
+
+JavaScript 中存在 `eval()` 和 `with` 两个机制可以欺骗词法作用域，
+其副作用是引擎无法在编译时对作用域查找进行优化。
