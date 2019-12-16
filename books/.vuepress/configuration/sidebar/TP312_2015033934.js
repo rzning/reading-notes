@@ -5,7 +5,8 @@ module.exports = [
     collapsable: false,
     children: [
       ['part_a/chapter01', '1 作用域是什么'],
-      ['part_a/chapter02', '2 词法作用域']
+      ['part_a/chapter02', '2 词法作用域'],
+      ['part_a/chapter03', '3 函数作用域和块作用域']
     ]
   },
   {
