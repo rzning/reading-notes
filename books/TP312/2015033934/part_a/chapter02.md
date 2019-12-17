@@ -93,7 +93,7 @@ foo('var a = 2')
 [Function - JavaScript | MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
 :::
 
-### with
+### 2.2.2 with
 
 ```js
 function foo (obj) {
