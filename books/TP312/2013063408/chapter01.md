@@ -46,7 +46,7 @@ Oxford University Press (1977). ISBN 0195019199.
 ::: tip Books
 Design Patterns: Elements of Reusable Object-Oriented Software
 
-设计模式：可复用面向对象软件的基础
+《设计模式：可复用面向对象软件的基础》
 
 - Erich Gamma
     - <https://github.com/egamma>
