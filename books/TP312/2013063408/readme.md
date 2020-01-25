@@ -33,7 +33,7 @@ JavaScript 设计模式
 - **第 5 章** [编写设计模式](./chapter05.md)
 - **第 6 章** [反模式](./chapter06.md)
 - **第 7 章** [设计模式类别](./chapter07.md)
-- **第 8 章** 设计模式分类
+- **第 8 章** [设计模式分类](./chapter08.md)
 - **第 9 章** JavaScript 设计模式
 - **第 10 章** JavaScript MV* 模式
 - **第 11 章** 模块化的 JavaScript 设计模式
