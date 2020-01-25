@@ -11,7 +11,8 @@ module.exports = [
       ['chapter05', '第五章 编写设计模式'],
       ['chapter06', '第六章 反模式'],
       ['chapter07', '第七章 设计模式类别'],
-      ['chapter08', '第八章 设计模式分类']
+      ['chapter08', '第八章 设计模式分类'],
+      ['chapter09', '第九章 JavaScript 设计模式']
     ]
   }
 ]
