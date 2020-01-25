@@ -15,7 +15,7 @@ JavaScript 设计模式
 
 下面将介绍在 JavaScript 程序中经常用到的 13 种设计模式：
 
-1. 构造器模式 Constructor
+1. 构造器模式 [Constructor](./pattern01.md)
 2. 模块模式 Module
 3. 揭示模块模式 Revealing Module
 4. 单例模式 Singleton

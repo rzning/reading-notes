@@ -14,5 +14,12 @@ module.exports = [
       ['chapter08', '第八章 设计模式分类'],
       ['chapter09', '第九章 JavaScript 设计模式']
     ]
+  },
+  {
+    title: 'Patterns',
+    collapsable: false,
+    children: [
+      ['pattern01', 'Constructor 构造器模式']
+    ]
   }
 ]
