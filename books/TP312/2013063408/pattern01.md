@@ -100,3 +100,10 @@ console.log(doctor.car)
 // 获取新属性
 console.log(doctor.category)
 ```
+
+## 2. 基本 Constructor
+
+
+## 3. 带原型的 Constructor
+
+
