@@ -1,3 +1,4 @@
+```java
 package com.java.blockChain;
 import java.security.MessageDigest;
 import javax.xml.bind.DatatypeConverter;
@@ -20,7 +21,7 @@ public class Block {
     }
 
     public String calculateHash () {
-        return "" + (this.index + this.previousHash + this.dateTimeStampOfTransaction + 
+        return "" + (this.index + this.previousHash + this.dateTimeStampOfTransaction +
             this.transactionDetails + this.nonce).hashCode();
     }
 
@@ -35,7 +36,7 @@ public class Block {
     public int getIndex () {
         return this.index;
     }
-    
+
     public String getDate () {
         return this.dateTimeStampOfTransaction;
     }
@@ -64,3 +65,4 @@ public class Block {
         this.nonce = nonce;
     }
 }
+```

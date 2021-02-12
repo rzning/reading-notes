@@ -1,3 +1,4 @@
+```java
 package com.java.blockChain;
 import java.util.ArrayList;
 
@@ -82,3 +83,4 @@ public class BlockChain {
         return "BlockChain:" + bc.toString() + " Data:" + sb.toString();
     }
 }
+```

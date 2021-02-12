@@ -1,3 +1,4 @@
+```java
 package com.java.Client;
 import com.java.blockChain.Block;
 import com.java.blockChain.BlockChain;
@@ -28,3 +29,4 @@ public class BlockChainClient () {
         System.out.println(bc2.toString());
     }
 }
+```
