@@ -1,0 +1,14 @@
+{
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[vue]": {
+    "editor.defaultFormatter": "octref.vetur"
+  },
+  "stylusSupremacy.insertBraces": false,
+  "stylusSupremacy.insertColons": false,
+  "stylusSupremacy.insertSemicolons": false,
+  "stylusSupremacy.insertNewLineAroundBlocks": "root",
+  "stylusSupremacy.quoteChar": "\"",
+  "stylusSupremacy.sortProperties": "grouped",
+  "stylusSupremacy.insertLeadingZeroBeforeFraction": false
+}

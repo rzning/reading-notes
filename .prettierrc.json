@@ -1,0 +1,13 @@
+{
+  "printWidth": 80,
+  "proseWrap": "preserve",
+  "quoteProps": "consistent",
+  "semi": false,
+  "singleQuote": true,
+  "tabWidth": 2,
+  "trailingComma": "none",
+  "pugSingleQuote": false,
+  "pugAttributeSeparator": "none",
+  "pugWrapAttributesThreshold": 3,
+  "pugSingleFileComponentIndentation": true
+}
