@@ -7,7 +7,8 @@ module.exports = {
   port: '8090',
   dest: 'dist',
   themeConfig: {
-    nav: [{
+    nav: [
+      {
         text: 'Rzning Home Page',
         link: 'http://rzning.com/'
       },

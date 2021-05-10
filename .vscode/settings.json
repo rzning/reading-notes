@@ -4,6 +4,9 @@
   "[vue]": {
     "editor.defaultFormatter": "octref.vetur"
   },
+  "[markdown]": {
+    "editor.formatOnSave": false
+  },
   "stylusSupremacy.insertBraces": false,
   "stylusSupremacy.insertColons": false,
   "stylusSupremacy.insertSemicolons": false,
