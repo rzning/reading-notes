@@ -1,4 +1,4 @@
-const sidebar = require('./configuration/sidebar')
+const sidebar = require('./sidebar')
 
 module.exports = {
   title: '读书笔记 - rzning.com',
