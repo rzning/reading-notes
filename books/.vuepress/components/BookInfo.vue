@@ -1,6 +1,8 @@
 <template lang="pug">
 .book-info
   .container
+    .cover(v-if="info.cover")
+      img(:src="$withBase(info.cover)" alt="book-cover")
     .item(v-for="item of effectList" :key="item.name")
       .label {{ item.label }}
       .value {{ item.value }}

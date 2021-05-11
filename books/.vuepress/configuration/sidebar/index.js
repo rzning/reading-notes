@@ -2,7 +2,10 @@ const I712_2017208893 = require('./I712_2017208893')
 const TP312_2013063408 = require('./TP312_2013063408')
 const TP312_2015033934 = require('./TP312_2015033934')
 
+const sidebar = require('../../sidebar')
+
 module.exports = {
+  ...sidebar,
   '/F713/2018095142/': [
     '',
     {
