@@ -2,7 +2,7 @@
 name : Solidity 集成开发工具简介 - 6 - 深入以太坊智能合约开发
 ---
 
-# Solidity 集成开发工具简介
+# 第六章 Solidity 集成开发工具简介
 
 [[TOC]]
 
