@@ -169,11 +169,67 @@ client.on('connect', () => {
 
 ## 7.2 构建 UDP 服务
 
+- UDP 称为用户数据包协议，与 TCP 同属于网路传输层。
+- UDP 跟 TCP 最大的不同是 UDP 不是面向连接的。
+- 在 UDP 中，一个套接字可以与多个 UDP 服务通信。
+- 由于 UDP 无需连接，资源消耗低，处理快速且灵活，
+  因此常应用于偶尔丢一两个包也不会产生重大影响的场景，比如音视频等。
+- UDP 应用十分广泛， DNS 服务就是基于 UDP 实现的。
+
 ### 7.2.1 创建 UDP 套接字
+
+- UDP 套接字一旦创建，既可以作为客户端发送数据，也可以作为服务器接收数据。
+
+```js
+const dgram = require('dgram')
+
+const socket = dgram.createSocket('udp4')
+```
+
 ### 7.2.2 创建 UDP 服务器端
+
+- 若想让 UDP 套接字接收网路消息，只需调用
+  `dgram.bind(port, [address])` 方法对网卡和端口进行绑定即可。
+
+UDP 服务器端示例：
+
+<<< @/books/TP312/2013258737/codes/7-2-udp-server.js
+
+启动服务：
+
+```sh {1}
+$ node ./server.js
+server listening 0.0.0.0:41234
+```
+
 ### 7.2.3 创建 UDP 客户端
+
+创建客户端并与服务端进行会话：
+
+<<< @/books/TP312/2013258737/codes/7-2-udp-client.js
+
+执行客户端，服务端有以下输出：
+
+```sh {3}
+$ node ./server.js
+server listening 0.0.0.0:41234
+server got Hello! from 127.0.0.1:50068
+```
+
+与 TCP 的 `socket.write()` 方法相比，
+UDP 的 `socket.send()` 方法可以随意发送数据到网路中的服务器端，
+而 TCP 若要发送数据给另一个服务器端，则需要重新通过套接字构造新的连接。
+
 ### 7.2.4 UDP 套接字事件
 
+UDP 套接字只是一个 `EventEmitter` 实例，而非 `Stream` 实例，它具有以下自定义事件：
+
+Event | 说明
+-|-
+`message` | 当 UDP 套接字监听网卡端口后，接收到消息时触发该事件。事件携带一个消息 `Buffer` 对象和一个 `RemoteInfo` 远程地址信息。
+`listening` | 当 UDP 套接字开始监听时触发该事件。
+`close` | 调用 `close()` 方法时触发该事件，并不再触发 `message` 事件。
+`error` | 当异常发生时触发该事件。若不监听，异常将直接抛出，使进程退出。
 
 ## 7.3 构建 HTTP 服务
 
