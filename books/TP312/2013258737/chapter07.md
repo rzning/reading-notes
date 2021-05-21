@@ -1,5 +1,5 @@
 ---
-name : "网路编程 - 7 - 深入浅出 Node.js"
+name: '网路编程 - 7 - 深入浅出 Node.js'
 ---
 
 # 第 7 章 网路编程
@@ -47,7 +47,6 @@ const server = net.createServer((socket) => {
 server.listen(8080, () => {
   console.log('server bond.')
 })
-
 ```
 
 通过 `net.createServer(listener)` 即可创建一个 TCP 服务器，
@@ -100,9 +99,9 @@ const client = net.connect({ path: '/tmp/echo.sock' })
 ### 7.1.4 TCP 服务的事件
 
 - Server 服务器事件
-    - listening, connection, close, error
+  - listening, connection, close, error
 - Socket 连接事件
-    - data, end, connect, drain, error, close, timeout
+  - data, end, connect, drain, error, close, timeout
 
 服务器事件：
 
@@ -129,7 +128,7 @@ server.listen(8080 /* , listeningListener */)
 连接事件：
 
 - 服务器可以同时与多个客户端保持连接，对于每个连接而言是典型的可读写 Stream 对象。
--  Stream 对象可以用于服务器端和客户端之间的通信。
+- Stream 对象可以用于服务器端和客户端之间的通信。
 - 既可以通过 `data` 事件接收另一端发来的数据，
 - 也可以通过 `write()` 向另一端发送数据。
 
@@ -224,34 +223,77 @@ UDP 的 `socket.send()` 方法可以随意发送数据到网路中的服务器�
 
 UDP 套接字只是一个 `EventEmitter` 实例，而非 `Stream` 实例，它具有以下自定义事件：
 
-Event | 说明
--|-
-`message` | 当 UDP 套接字监听网卡端口后，接收到消息时触发该事件。事件携带一个消息 `Buffer` 对象和一个 `RemoteInfo` 远程地址信息。
-`listening` | 当 UDP 套接字开始监听时触发该事件。
-`close` | 调用 `close()` 方法时触发该事件，并不再触发 `message` 事件。
-`error` | 当异常发生时触发该事件。若不监听，异常将直接抛出，使进程退出。
+| Event       | 说明                                                                                                                  |
+| ----------- | --------------------------------------------------------------------------------------------------------------------- |
+| `message`   | 当 UDP 套接字监听网卡端口后，接收到消息时触发该事件。事件携带一个消息 `Buffer` 对象和一个 `RemoteInfo` 远程地址信息。 |
+| `listening` | 当 UDP 套接字开始监听时触发该事件。                                                                                   |
+| `close`     | 调用 `close()` 方法时触发该事件，并不再触发 `message` 事件。                                                          |
+| `error`     | 当异常发生时触发该事件。若不监听，异常将直接抛出，使进程退出。                                                        |
 
 ## 7.3 构建 HTTP 服务
 
+Node 官网 Http 服务器示例：
+
+> <https://nodejs.org/zh-cn/about/>
+
+<<< @/books/TP312/2013258737/codes/7-3-http-server.js
+
 ### 7.3.1 HTTP
 
-### 7.3.2 http 模块
-### 7.3.3 HTTP 客户端
+#### 1. 初识 HTTP
 
+- HTTP 的全称为 HyperText Transfer Protocal 即超文本传输协议。
+- HTTP 构建在 TCP 之上，属于应用层协议。
+- HTTP 的两端为服务器和浏览器，即 B/S 模式。
+- HTTP 的 W3C 标准为 RFC 2616 。
+
+#### 2. HTTP 报文
+
+启动上述服务器端代码，使用 `curl` 命令的 `-v` 选项获取并打印完整报文信息：
+
+```sh {1}
+$ curl -v http://127.0.0.1:3000/
+*   Trying 127.0.0.1...
+* TCP_NODELAY set
+* Connected to 127.0.0.1 (127.0.0.1) port 3000 (#0)
+> GET / HTTP/1.1
+> Host: 127.0.0.1:3000
+> User-Agent: curl/7.55.1
+> Accept: */*
+>
+< HTTP/1.1 200 OK
+< Content-Type: text/plain
+< Date: Fri, 21 May 2021 14:57:54 GMT
+< Connection: keep-alive
+< Keep-Alive: timeout=5
+< Content-Length: 11
+<
+Hello World* Connection #0 to host 127.0.0.1 left intact
+```
+
+- 第一部分（以 `*` 开头）内容为经典的 TCP 3 次握手过程。
+- 第二部分（以 `>` 开头）是在完成连接之后，客户端向服务器端发送的请求报文。
+- 第三部分（以 `<` 开头）是服务器端完成处理之后，向客户端发送的响应内容。
+- 最后部分是结束会话的信息。
+
+### 7.3.2 http 模块
+
+### 7.3.3 HTTP 客户端
 
 ## 7.4 构建 WebSocket 服务
 
 ### 7.4.1 WebSocket 握手
-### 7.4.2 WebSocket 数据传输
-### 7.4.3 小结
 
+### 7.4.2 WebSocket 数据传输
+
+### 7.4.3 小结
 
 ## 7.5 网路服务与安全
 
 ### 7.5.1 TLS/SSL
+
 ### 7.5.2 TLS 服务
+
 ### 7.5.3 HTTPS 服务
 
-
 ## 7.6 总结
-
