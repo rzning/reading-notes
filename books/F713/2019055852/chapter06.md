@@ -1,8 +1,8 @@
 ---
-name : Solidity 集成开发工具简介 - 6 - 深入以太坊智能合约开发
+name: Solidity 集成开发工具简介 - 6 - 深入以太坊智能合约开发
 ---
 
-# 第六章 Solidity 集成开发工具简介
+# 第 6 章 Solidity 集成开发工具简介
 
 [[TOC]]
 
@@ -45,10 +45,10 @@ truffle unbox metacoin
 #### 3. Truffle 项目目录结构
 
 - `truffle-object/`
-    - `contracts/` - Solidity 智能合约代码目录
-    - `migrations/` - 部署脚本文件目录
-    - `test/` - 测试脚本目录
-    - `truffle.js` - Truffle 配置文件
+  - `contracts/` - Solidity 智能合约代码目录
+  - `migrations/` - 部署脚本文件目录
+  - `test/` - 测试脚本目录
+  - `truffle.js` - Truffle 配置文件
 
 ### 6.1.3 Truffle 开发步骤
 
@@ -77,7 +77,6 @@ truffle test ./test/test.js
 :::
 
 ::: details 3. 智能合约编译
-
 
 执行以下命令进行智能合约编译：
 
@@ -109,7 +108,6 @@ truffle migrate
 
 - 本地测试时，确保有以太坊客户端在运行，如 `truffle develop` 或 `ganache` 等。
 
-
 #### ⑴ 智能合约部署文件
 
 部署脚本为普通 JavaScript 文件：
@@ -117,11 +115,11 @@ truffle migrate
 ```js
 // migrations/1_initial_migration.js
 
-const Migrations = artifacts.require("Migrations");
+const Migrations = artifacts.require('Migrations')
 
 module.exports = function (deployer) {
-  deployer.deploy(Migrations);
-};
+  deployer.deploy(Migrations)
+}
 ```
 
 - 部署脚本使用 `artifacts.require()` 方法引用指定的智能合约，参数为智能合约名。
@@ -133,10 +131,9 @@ module.exports = function (deployer) {
 const A = artifacts.require('A')
 const B = artifacts.require('B')
 
-module.exports = function(deployer) {
-
+module.exports = function (deployer) {
   // 先部署 A 再部署 B ，将 A 部署后的地址传给 B
-  deployer.deploy(A).then(function() {
+  deployer.deploy(A).then(function () {
     return deployer.deploy(B, A.address)
   })
 }
@@ -174,13 +171,12 @@ contract Migrations {
 }
 ```
 
-
 #### ⑶ 部署到以太坊网路
 
-部署脚本可以根据网路执行不同的部署操作：
+部署脚本可以根据网络执行不同的部署操作：
 
 ```js
-module.exports = function(deployer, network) {
+module.exports = function (deployer, network) {
   // 在部署方法中获取 network 参数
   if (network === 'live') {
     // 当网络为 live 时执行相关部署操作
@@ -193,7 +189,7 @@ module.exports = function(deployer, network) {
 部署脚本还可以获取到以太坊客户端和 web3 provider 提供的账号数据：
 
 ```js
-module.exports = function(deployer, network, accounts) {
+module.exports = function (deployer, network, accounts) {
   // 部署中使用账号数据与 `web3.eth.getAccounts()` 的结果一致
 }
 ```
@@ -233,12 +229,11 @@ Truffle 给我们与智能合约的调用提供了便利。
 
 ⑴ 交易
 
-- 交易从本质上改变了网路的状态。
+- 交易从本质上改变了网络的状态。
 - 交易的最大特点就是向以太坊网路中写入数据。
 - 交易需要消耗以太币 ( Ether ) 也就是 `ges` 。
 - 交易需要花费时间执行，通过交易执行一个智能合约方法，
-    不会立即得到返回值，只会返回一个交易编号。
-
+  不会立即得到返回值，只会返回一个交易编号。
 
 ⑵ 调用
 
@@ -246,12 +241,9 @@ Truffle 给我们与智能合约的调用提供了便利。
 - 调用是免费的。
 - 通过调用执行智能合约方法时，会立即获得返回值。
 
-
 #### :two: 执行智能合约方法
 
-
 :::
-
 
 ### 6.1.4 Truffle 高级用法
 
