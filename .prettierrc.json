@@ -6,8 +6,17 @@
   "singleQuote": true,
   "tabWidth": 2,
   "trailingComma": "none",
+  "embeddedLanguageFormatting": "auto",
   "pugSingleQuote": false,
   "pugAttributeSeparator": "none",
   "pugWrapAttributesThreshold": 3,
-  "pugSingleFileComponentIndentation": true
+  "pugSingleFileComponentIndentation": true,
+  "overrides": [
+    {
+      "files": ["*.yml", "*.yaml"],
+      "options": {
+        "singleQuote": false
+      }
+    }
+  ]
 }

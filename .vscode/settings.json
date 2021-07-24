@@ -5,7 +5,7 @@
     "editor.defaultFormatter": "octref.vetur"
   },
   "[markdown]": {
-    "editor.formatOnSave": false
+    "editor.formatOnSave": true
   },
   "stylusSupremacy.insertBraces": false,
   "stylusSupremacy.insertColons": false,

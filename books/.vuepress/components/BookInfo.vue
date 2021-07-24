@@ -69,6 +69,8 @@ export default {
   .container
     padding 1rem .7rem
     min-width 20rem
+  .cover
+    text-align center
   .item
     display flex
     margin .3rem 0
