@@ -1,7 +1,0 @@
-{
-  "compilerOptions": {
-    "baseUrl": "."
-  },
-  "include": ["books/**/*", "books/.vuepress/**/*"],
-  "exclude": ["node_modules"]
-}

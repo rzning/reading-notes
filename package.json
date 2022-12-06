@@ -1,21 +1,22 @@
 {
   "name": "@rzning/reading-notes",
-  "version": "1.0.0",
+  "version": "1.2.0",
   "description": "reading notes",
   "repository": "https://github.com/rzning/reading-notes.git",
   "author": "Zhenning Ruan <rzning@outlook.com>",
   "license": "MIT",
   "private": true,
+  "type": "module",
   "homepage": "https://reading-notes.rzning.com/",
   "scripts": {
     "dev": "vuepress dev books",
     "build": "vuepress build books"
   },
   "devDependencies": {
-    "@prettier/plugin-pug": "^1.15.1",
-    "prettier": "^2.2.1",
-    "pug": "^3.0.2",
-    "pug-plain-loader": "^1.1.0",
-    "vuepress": "^1.8.2"
+    "@vuepress/plugin-register-components": "^2.0.0-beta.53",
+    "prettier": "^2.8.0",
+    "sass": "^1.56.1",
+    "vue": "^3.2.45",
+    "vuepress": "^2.0.0-beta.53"
   }
 }

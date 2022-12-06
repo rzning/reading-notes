@@ -4,5 +4,5 @@
 
 个人日常读书笔记，基于 [VuePress] 构建，使用 [Netlify] 部署。
 
-[VuePress]: <https://github.com/vuejs/vuepress>
-[Netlify]: <https://www.netlify.com/>
+[vuepress]: https://github.com/vuejs/vuepress
+[netlify]: https://www.netlify.com/

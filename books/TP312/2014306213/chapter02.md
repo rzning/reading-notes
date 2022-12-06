@@ -64,7 +64,7 @@ name: '从 Node 开始 - 2 - Node 与 Express 开发'
 
 ### 2.5.1 Hello World
 
-<<< @/books/TP312/2014306213/codes/2-5-1-hello-world.js
+@[code js](./codes/2-5-1-hello-world.js)
 
 ### 2.5.2 事件驱动编程
 
@@ -78,7 +78,7 @@ Node 的核心理念是 **事件驱动编程** 。
 
 扩展一下上面 Hello World 例子，将其改造成包含首页、关于、和未找到页面的极简网站：
 
-<<< @/books/TP312/2014306213/codes/2-5-3-simple-website.js{5-22}
+@[code js{5-22}](./codes/2-5-3-simple-website.js)
 
 ### 2.5.4 静态资源服务
 
@@ -89,7 +89,7 @@ Node 的核心理念是 **事件驱动编程** 。
 继续改造上面例子，首先在 `/public` 目录下创建 home.html, about.html, 404.html 文件，
 并根据请求路径分别加载它们：
 
-<<< @/books/TP312/2014306213/codes/2-5-4-static-resource-service.js
+@[code js](./codes/2-5-4-static-resource-service.js)
 
 ## 2.6 走向 Express
 

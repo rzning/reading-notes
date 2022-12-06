@@ -1,5 +1,5 @@
 {
-  "printWidth": 80,
+  "printWidth": 120,
   "proseWrap": "preserve",
   "quoteProps": "consistent",
   "semi": false,
@@ -7,10 +7,6 @@
   "tabWidth": 2,
   "trailingComma": "none",
   "embeddedLanguageFormatting": "auto",
-  "pugSingleQuote": false,
-  "pugAttributeSeparator": "none",
-  "pugWrapAttributesThreshold": 3,
-  "pugSingleFileComponentIndentation": true,
   "overrides": [
     {
       "files": ["*.yml", "*.yaml"],
