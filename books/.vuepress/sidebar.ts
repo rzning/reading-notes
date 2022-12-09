@@ -1,15 +1,15 @@
 import { SidebarConfig } from 'vuepress'
 
-import F713_2018095142 from '../F713/2018095142/_sidebar.json'
-import F713_2018184395 from '../F713/2018184395/_sidebar.json'
-import F713_2019055852 from '../F713/2019055852/_sidebar.json'
-import I712_2017208893 from '../I712/2017208893/_sidebar.json'
-import TP312_2013063408 from '../TP312/2013063408/_sidebar.json'
-import TP312_2013258737 from '../TP312/2013258737/_sidebar.json'
-import TP312_2014306213 from '../TP312/2014306213/_sidebar.json'
-import TP312_2015033934 from '../TP312/2015033934/_sidebar.json'
+import F713_2018095142 from '../F713/2018095142/_sidebar.js'
+import F713_2018184395 from '../F713/2018184395/_sidebar.js'
+import F713_2019055852 from '../F713/2019055852/_sidebar.js'
+import I712_2017208893 from '../I712/2017208893/_sidebar.js'
+import TP312_2013063408 from '../TP312/2013063408/_sidebar.js'
+import TP312_2013258737 from '../TP312/2013258737/_sidebar.js'
+import TP312_2014306213 from '../TP312/2014306213/_sidebar.js'
+import TP312_2015033934 from '../TP312/2015033934/_sidebar.js'
 
-export default {
+export const sidebar: SidebarConfig = {
   '/F713/2018095142/': F713_2018095142,
   '/F713/2018184395/': F713_2018184395,
   '/F713/2019055852/': F713_2019055852,
@@ -19,4 +19,4 @@ export default {
   '/TP312/2014306213/': TP312_2014306213,
   '/TP312/2015033934/': TP312_2015033934,
   '/': []
-} as SidebarConfig
+}

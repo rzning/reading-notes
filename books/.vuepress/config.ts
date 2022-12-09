@@ -1,6 +1,6 @@
 import { defineUserConfig, defaultTheme } from 'vuepress'
 import { useRegisterComponentsPlugin } from './components/registerComponents.js'
-import sidebar from './sidebar.js'
+import { sidebar } from './sidebar.js'
 
 export default defineUserConfig({
   lang: 'zh-CN',

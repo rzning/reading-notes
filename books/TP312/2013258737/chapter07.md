@@ -192,7 +192,7 @@ const socket = dgram.createSocket('udp4')
 
 UDP 服务器端示例：
 
-<<< @/books/TP312/2013258737/codes/7-2-udp-server.js
+@[code js](./codes/7-2-udp-server.js)
 
 启动服务：
 
@@ -205,7 +205,7 @@ server listening 0.0.0.0:41234
 
 创建客户端并与服务端进行会话：
 
-<<< @/books/TP312/2013258737/codes/7-2-udp-client.js
+@[code js](./codes/7-2-udp-client.js)
 
 执行客户端，服务端有以下输出：
 
@@ -236,7 +236,7 @@ Node 官网 Http 服务器示例：
 
 > <https://nodejs.org/zh-cn/about/>
 
-<<< @/books/TP312/2013258737/codes/7-3-http-server.js
+@[code js](./codes/7-3-http-server.js)
 
 ### 7.3.1 HTTP
 
