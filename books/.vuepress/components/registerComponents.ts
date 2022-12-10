@@ -3,8 +3,11 @@ import { getDirname, path } from '@vuepress/utils'
 
 const __dirname = getDirname(import.meta.url)
 
+const getPath = (filePath: string) => path.resolve(__dirname, filePath)
+
 export const useRegisterComponentsPlugin = registerComponentsPlugin({
   components: {
-    BookInfo: path.resolve(__dirname, './BookInfo.vue')
+    BookInfo: getPath('./BookInfo.vue'),
+    LargeTable: getPath('./LargeTable.vue')
   }
 })

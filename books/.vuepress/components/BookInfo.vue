@@ -20,7 +20,7 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
 import { usePageData, withBase } from '@vuepress/client'
-import type { BookInfoFrontmatter, BookBaseInfoNames } from '../types/bookInfo.js'
+import type { BookInfoFrontmatter, BookBaseInfoNames } from './types/bookInfo.js'
 
 export default defineComponent({
   name: 'BookInfo',
