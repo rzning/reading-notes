@@ -8,6 +8,7 @@
   "private": true,
   "type": "module",
   "homepage": "https://reading-notes.rzning.com/",
+  "packageManager": "yarn@1.22.19",
   "scripts": {
     "dev": "vuepress dev books",
     "build": "vuepress build books"
