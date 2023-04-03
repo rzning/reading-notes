@@ -1,0 +1,12 @@
+{
+  "name": "meadowlark",
+  "version": "1.0.0",
+  "description": "Meadowlark Travel Agency Website",
+  "main": "meadowlark.js",
+  "author": "rzning",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
