@@ -31,6 +31,10 @@ export type BookInfoFrontmatter = {
    */
   translator?: string
   /**
+   * 系列
+   */
+  series?: string
+  /**
    * 出版社
    */
   publisher?: string
@@ -54,5 +58,6 @@ export type BookBaseInfoNames =
   | 'author'
   | 'compiler'
   | 'translator'
+  | 'series'
   | 'publisher'
   | 'category'

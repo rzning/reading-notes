@@ -31,6 +31,7 @@ export default defineComponent({
       { name: 'author', label: '作者' },
       { name: 'compiler', label: '编者' },
       { name: 'translator', label: '译者' },
+      { name: 'series', label: '系列' },
       { name: 'publisher', label: '出版社' },
       { name: 'category', label: '分类' }
     ]

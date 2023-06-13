@@ -6,3 +6,7 @@
 
 [vuepress]: https://github.com/vuejs/vuepress
 [netlify]: https://www.netlify.com/
+
+### 参考
+
+- [国家版本数据中心 PDC 平台](https://pdc.capub.cn/)
