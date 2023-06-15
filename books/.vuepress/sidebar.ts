@@ -8,6 +8,7 @@ import TP312_2013063408 from '../TP312/2013063408/_sidebar.js'
 import TP312_2013258737 from '../TP312/2013258737/_sidebar.js'
 import TP312_2014306213 from '../TP312/2014306213/_sidebar.js'
 import TP312_2015033934 from '../TP312/2015033934/_sidebar.js'
+import TU998_2019272715 from '../TU998/2019272715/_sidebar.js'
 
 export const sidebar: SidebarConfig = {
   '/F713/2018095142/': F713_2018095142,
@@ -18,5 +19,6 @@ export const sidebar: SidebarConfig = {
   '/TP312/2013258737/': TP312_2013258737,
   '/TP312/2014306213/': TP312_2014306213,
   '/TP312/2015033934/': TP312_2015033934,
+  '/TU998/2019272715/': TU998_2019272715,
   '/': []
 }
