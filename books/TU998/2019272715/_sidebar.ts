@@ -5,7 +5,7 @@ const sidebar: SidebarConfigArray = [
   {
     text: '一、职业道德',
     collapsible: false,
-    children: ['chapter_1_1']
+    children: ['chapter_1_1', 'chapter_1_2']
   },
   {
     text: '二、消防工作概述'
